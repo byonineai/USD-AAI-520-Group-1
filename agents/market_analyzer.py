@@ -1,10 +1,10 @@
+from domain.analysis_result import AnalysisResult
 from domain.research_result import ResearchResult
 from domain.research_task import ResearchTaskType
 
-
 class MarketAnalyzer:
 
-    def analyze(self, result: ResearchResult) -> dict:
+    def analyze(self, result: ResearchResult) -> AnalysisResult:
         if result.task_type != ResearchTaskType.MARKET:
             raise ValueError(
                 "MarketAnalyzer can only analyze MARKET results."
@@ -24,13 +24,26 @@ class MarketAnalyzer:
                 price_change / previous_close
             ) * 100
 
-        return {
-            "symbol": result.symbol,
-            "previous_close": previous_close,
-            "current_price": current_price,
-            "market_cap": data.get("market_cap"),
-            "pe_ratio": data.get("pe_ratio"),
-            "volume": data.get("volume"),
-            "price_change": price_change,
-            "price_change_percent": price_change_percent,
-        }
+        summary = "Market price data is incomplete."
+
+        if price_change_percent is not None:
+            summary = (
+                f"{result.symbol} changed "
+                f"{price_change_percent:.2f}% "
+                f"from the previous close."
+            )
+
+        return AnalysisResult(
+            task_type=ResearchTaskType.MARKET,
+            symbol=result.symbol,
+            summary=summary,
+            data={
+                "current_price": current_price,
+                "previous_close": previous_close,
+                "price_change": price_change,
+                "price_change_percent": price_change_percent,
+                "market_cap": data.get("market_cap"),
+                "pe_ratio": data.get("pe_ratio"),
+                "volume": data.get("volume"),
+            },
+        )
