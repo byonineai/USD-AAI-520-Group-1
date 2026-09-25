@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 # Interface - Provider Contract
-
+# How do I retrieve data?
 # Any  market data provider must implement the
 # get_market_data() method
 

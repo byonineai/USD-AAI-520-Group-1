@@ -2,7 +2,6 @@ from unittest.mock import patch
 
 from providers.yahoo_finance_provider import YahooFinanceProvider
 
-
 @patch("providers.yahoo_finance_provider.yf.Ticker")
 def test_get_market_data(mock_ticker):
     mock_ticker.return_value.info = {

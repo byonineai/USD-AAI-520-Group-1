@@ -1,5 +1,5 @@
 from domain.research_task import ResearchTask, ResearchTaskType
-
+# What research do I need?
 class ResearchPlanner:
   def plan(self, symbol: str) -> list[ResearchTask]:
     symbol = symbol.strip().upper()

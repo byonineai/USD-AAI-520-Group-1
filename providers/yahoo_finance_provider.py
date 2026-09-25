@@ -1,5 +1,5 @@
 import yfinance as yf
-
+# How do I retrieve data?
 from providers.market_data_provider import MarketDataProvider
 
 class YahooFinanceProvider(MarketDataProvider):
