@@ -2,7 +2,7 @@ import pytest
 
 from domain.research_task import ResearchTaskType
 from orchestration.tool_registry import ToolRegistry
-
+# Descides who can provide
 
 class FakeMarketProvider:
 
