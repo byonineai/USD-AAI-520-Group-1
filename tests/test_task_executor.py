@@ -11,7 +11,7 @@ class FakeMarketProvider:
             "price": 100.00,
         }
 
-def test_executor_executes_market_task():
+def test_executor_returns_research_result():
     registry = ToolRegistry()
 
     registry.register(
@@ -28,8 +28,10 @@ def test_executor_executes_market_task():
 
     result = executor.execute(task)
 
-    assert result["symbol"] == "NVDA"
-    assert result["price"] == 100.00
+    assert result.task_type == ResearchTaskType.MARKET
+    assert result.symbol == "NVDA"
+    assert result.data["symbol"] == "NVDA"
+    assert result.data["price"] == 100.00
 
 # Failure Tests
 # def test_executor_rejects_unregistered_task():
