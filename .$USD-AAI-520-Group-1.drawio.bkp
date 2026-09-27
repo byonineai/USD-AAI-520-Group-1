@@ -1,0 +1,393 @@
+<mxfile host="Electron" pages="2">
+  <diagram name="Page-1-Diagram" id="ZI6PXhM2aRqh9IHxfHZm">
+    <mxGraphModel dx="1435" dy="1036" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;" value="" vertex="1">
+          <mxGeometry height="1248" width="1445" x="41" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Autonomous Investment&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Research Agent Architecture&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="63" width="344" x="10" y="9" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-66" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="0_JRJK70Ka6cnRg481GB-65" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-53" parent="1" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Person.svg;" value="" vertex="1">
+          <mxGeometry height="50" width="37" x="1089" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-137" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-67" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1107.56" y="250" />
+              <mxPoint x="1107.56" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-65" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Stock Symbol" vertex="1">
+          <mxGeometry height="60" width="120" x="1047.5" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-154" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="942.8888888888887" y="444.33333333333326" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-67" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Research Planner&lt;div&gt;&lt;b&gt;(GEMINI)&lt;/b&gt;&lt;br&gt;&lt;div&gt;What information do I need?&lt;/div&gt;&lt;div&gt;What tasks to be performed?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="180" x="1017.5" y="277" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-73" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-72" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="531" />
+              <mxPoint x="657" y="531" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-75" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-74" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="982" y="531" />
+              <mxPoint x="800" y="531" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-77" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-76" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="971" y="523" />
+              <mxPoint x="944" y="523" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-23" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z_Ym1q__L2E_YyixVlMF-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;div&gt;Tool/Data Selection&lt;/div&gt;Specialist Dispatcher&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Orchestrator&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Which tool/data source can provide it?&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Which specialist/tool should perform each task?&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="142" width="149" x="868.5" y="366" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-143" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="0_JRJK70Ka6cnRg481GB-140">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="656.22" y="696" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-149" connectable="0" parent="0_JRJK70Ka6cnRg481GB-143" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="returned data&lt;div&gt;raw JSON&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.5385" y="1" as="geometry">
+            <mxPoint x="-2" y="-22" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-10" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="659" y="644.33" />
+              <mxPoint x="204" y="644.33" />
+            </Array>
+            <mxPoint x="204" y="679.8888888888889" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-11" connectable="0" parent="Z_Ym1q__L2E_YyixVlMF-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ex: Yahoo Finance Might Return" vertex="1">
+          <mxGeometry relative="1" x="0.2662" y="-1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-72" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="Yahoo Finance&lt;div&gt;Prices/Ratios&lt;/div&gt;&lt;div&gt;Data Connector/Tool&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="599" y="551" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-79" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="799" y="661" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-147" connectable="0" parent="0_JRJK70Ka6cnRg481GB-79" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="returned data" vertex="1">
+          <mxGeometry relative="1" x="-0.1556" y="3" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-74" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="Financial News&lt;div&gt;Articles&lt;/div&gt;&lt;div&gt;Data Connector/Tool&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="739" y="551" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-144" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="0_JRJK70Ka6cnRg481GB-140">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="944" y="696" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-148" connectable="0" parent="0_JRJK70Ka6cnRg481GB-144" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="returned data" vertex="1">
+          <mxGeometry relative="1" x="-0.5673" y="-2" as="geometry">
+            <mxPoint x="-2" y="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-76" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="SEC&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;Earnings&lt;/span&gt;&lt;div&gt;Company Filings&lt;br&gt;&lt;div&gt;Data Connector/Tool&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="884" y="551" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-87" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-86" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="799" y="732" />
+              <mxPoint x="557" y="732" />
+            </Array>
+            <mxPoint x="799" y="721" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-90" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-89" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="799" y="721" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-93" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-89" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="799" y="721" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-94" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-89" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="703" y="721" />
+            </Array>
+            <mxPoint x="799" y="721" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-96" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-95" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="799" y="781" />
+              <mxPoint x="799" y="781" />
+            </Array>
+            <mxPoint x="799" y="721" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-99" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="0_JRJK70Ka6cnRg481GB-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-86" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Market Analyzer&lt;/b&gt;&lt;div&gt;What is the stock doing?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="499" y="771" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-98" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-97" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="854.33" />
+              <mxPoint x="700" y="854.33" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-89" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;News Analyzer&lt;/b&gt;&lt;div&gt;What is happening around the company?&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Ingest Neww&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Preprocess&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Classify&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Extract&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Summarize&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="120" x="643" y="771" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-100" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="0_JRJK70Ka6cnRg481GB-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-95" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Earnings Analyzer&lt;/b&gt;&lt;div&gt;How is the company performing financially?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="787" y="771" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-102" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-101" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-1" connectable="0" parent="0_JRJK70Ka6cnRg481GB-102" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="GEMINI Analysis" vertex="1">
+          <mxGeometry relative="1" x="-0.0444" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-97" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Analysis Generator&lt;div&gt;Combine All Findings&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="186" x="607" y="909" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-104" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="1098" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-101" parent="1" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Evaluator&lt;div&gt;&lt;b&gt;(GEMINI)&lt;/b&gt;&lt;br&gt;&lt;div&gt;Check quality, sources,&lt;/div&gt;&lt;div&gt;completeness, accuracy&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="177" x="610" y="1005" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-109" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-108">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1174" />
+              <mxPoint x="572" y="1174" />
+            </Array>
+            <mxPoint x="700" y="1158" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-128" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="0_JRJK70Ka6cnRg481GB-127" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-105" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#d5e8d4;strokeColor=#82b366;" value="Yes" vertex="1">
+          <mxGeometry height="25" width="54" x="714" y="1204" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-119" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-118" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-108" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#f8cecc;strokeColor=#b85450;" value="No" vertex="1">
+          <mxGeometry height="25" width="54" x="545" y="1204" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-113" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;endArrow=none;endFill=0;" target="0_JRJK70Ka6cnRg481GB-112" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-110" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#b0e3e6;strokeColor=#0e8088;" value="Memory&lt;div&gt;JSON/SQL LITE&lt;br&gt;&lt;div&gt;Notes/Lessons&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="115" x="683.5" y="1321" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-115" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;" target="0_JRJK70Ka6cnRg481GB-67" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1168.44" y="1458.56" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-112" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#CCFFFF;strokeColor=#6c8ebf;" value="Next run" vertex="1">
+          <mxGeometry height="25" width="54" x="714" y="1446" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-118" parent="1" style="whiteSpace=wrap;html=1;rounded=1;arcSize=13;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Refine/Optimizer" vertex="1">
+          <mxGeometry height="60" width="120" x="512" y="1318" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-123" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="0_JRJK70Ka6cnRg481GB-97">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="512" y="1350" />
+              <mxPoint x="435.11" y="1350" />
+              <mxPoint x="435.11" y="931" />
+              <mxPoint x="607" y="931" />
+            </Array>
+            <mxPoint x="439" y="1113" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-124" connectable="0" parent="0_JRJK70Ka6cnRg481GB-123" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Evaluator Feedback + Refined Instructions&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0867" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-157" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" target="0_JRJK70Ka6cnRg481GB-110" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-127" parent="1" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Final&lt;div&gt;Report&lt;/div&gt;" vertex="1">
+          <mxGeometry height="41" width="61" x="710.5" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-132" edge="1" parent="1" source="0_JRJK70Ka6cnRg481GB-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="0_JRJK70Ka6cnRg481GB-105">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="1174" />
+              <mxPoint x="741" y="1174" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-130" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Good Enough?" vertex="1">
+          <mxGeometry height="80" width="80" x="659" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-140" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Data Router&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="94" width="120" x="739" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-151" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="FRED&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(51, 51, 51), rgb(193, 193, 193));&quot;&gt;Market&lt;/span&gt;&lt;div&gt;Macroeconomic Data&lt;br&gt;&lt;div&gt;Data Connector/Tool&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="1017.5" y="551" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-152" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Data Acquisition Layer&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;class API&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;receive JSON&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;clean/normalize JSON&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;return strutured data&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="245" x="294" y="563" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-153" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="912" y="763" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-155" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="216" width="50" x="798.5" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="0_JRJK70Ka6cnRg481GB-156" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Autonomous Agents&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="277" x="564.5" y="305.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Reviews Returned Results&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Decides if more research is needed&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="264" x="1212" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-4" parent="1" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.physical_pull;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="25" width="27.5" x="862" y="624" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-6" parent="1" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=2;shape=mxgraph.lean_mapping.physical_pull;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="25" width="27.5" x="719" y="624" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Specialists agent analyzes data&lt;div&gt;returned from the API&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="217" x="543" y="656" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;symbol&quot;: &quot;NVDA&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;price&quot;: 183.42,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;volume&quot;: 175000000,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;pe_ratio&quot;: 42.7&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="186" x="108" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="What specialist should handle this?" vertex="1">
+          <mxGeometry height="30" width="198" x="702.5" y="746" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-19" edge="1" parent="1" source="Z_Ym1q__L2E_YyixVlMF-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="0_JRJK70Ka6cnRg481GB-140">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="266.22" y="707.67" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-20" connectable="0" parent="Z_Ym1q__L2E_YyixVlMF-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Sent to router" vertex="1">
+          <mxGeometry relative="1" x="-0.4512" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;type&quot;: &quot;market_analysis&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;symbol&quot;: &quot;NVDA&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;summary&quot;: {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &quot;price_trend&quot;: &quot;upward&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &quot;volume_condition&quot;: &quot;above_average&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &quot;valuation&quot;: &quot;high_relative_to_history&quot;&lt;/div&gt;&lt;div&gt;&amp;nbsp; }&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="147" width="302" x="37" y="808" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-17" edge="1" parent="1" source="Z_Ym1q__L2E_YyixVlMF-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.998;entryY=0.164;entryDx=0;entryDy=0;entryPerimeter=0;" target="Z_Ym1q__L2E_YyixVlMF-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="359.12" y="671.06" />
+              <mxPoint x="359.12" y="832.12" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-18" connectable="0" parent="Z_Ym1q__L2E_YyixVlMF-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Interpret and product" vertex="1">
+          <mxGeometry relative="1" x="-0.6348" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
+          <mxGeometry height="30" width="60" x="965" y="498" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-22" parent="1" style="text;whiteSpace=wrap;" value="{  &quot;task&quot;: &quot;market_analysis&quot;,  &quot;symbol&quot;: &quot;NVDA&quot;,  &quot;metrics&quot;: [    &quot;price&quot;,    &quot;volume&quot;,    &quot;pe_ratio&quot;  ]}" vertex="1">
+          <mxGeometry height="36" width="494" x="1061.0044444444443" y="419.0033333333333" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;p style=&quot;margin-right: 0in; margin-left: 0in; font-size: 12pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: start;&quot;&gt;&lt;strong&gt;Request JSON → Analyzer → API → Data JSON → Analyzer → Analysis JSON.&lt;/strong&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="30" width="594" x="271" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Specialist Agents&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Performs specialized analysis&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Decides how to analyze it&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;font-size: 16px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Receive structured data&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;interpret it&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;calculate / reason&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;produce analysis JSON&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="106" width="245" x="930" y="743" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-26" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="100" width="50" x="543" y="531" as="geometry" />
+        </mxCell>
+        <mxCell id="Z_Ym1q__L2E_YyixVlMF-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Macro Analyzer&lt;/b&gt;&lt;div&gt;What is the economy doing?&lt;/div&gt;&lt;div&gt;How could macro conditions affect this company&lt;/div&gt;" vertex="1">
+          <mxGeometry height="83" width="120" x="370" y="771" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-2" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Normalize Results&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry x="807" y="656" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;pre dir=&quot;ltr&quot;&gt;&lt;code&gt;1. Completeness&lt;br/&gt;2. Evidence / source support&lt;br/&gt;3. Accuracy / consistency&lt;br/&gt;4. Missing information&lt;br/&gt;5. Coverage of requested research tasks&lt;br/&gt;6. Quality of explanation&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="30" width="127" x="846" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;nbsp; " vertex="1">
+          <mxGeometry height="30" width="60" x="781.5" y="1143" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;def is_good_enough(evaluation):&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; return (&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; evaluation[&quot;complete&quot;]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; and evaluation[&quot;supported_by_sources&quot;]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; and not evaluation[&quot;missing_information&quot;]&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; and evaluation[&quot;quality_score&quot;] &amp;gt;= 0.80&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; )&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="280" x="835" y="1241" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Query More data only if there&#39;s a data gap." vertex="1">
+          <mxGeometry height="30" width="74" x="459" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;LANGGRAPH STATEGRAPH&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;(Maybe Introduced Later)&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Remembers what&#39;s happening on the run&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="310" x="593" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="LangGraphChecks" vertex="1">
+          <mxGeometry height="30" width="60" x="669" y="1065" as="geometry" />
+        </mxCell>
+        <mxCell id="lSsg2atVWqbFEZ-uexBv-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="Remembers useful findings from yesterday&#39;s or last week&#39;s run" vertex="1">
+          <mxGeometry height="30" width="276" x="807" y="1364" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="KTgChth7gQaFqIh-BlBW" name="ReactJS">
+    <mxGraphModel dx="1220" dy="881" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
