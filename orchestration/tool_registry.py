@@ -5,7 +5,8 @@ from domain.research_task import ResearchTaskType
 # The key responsibility of this class is
 # given a research task type, which provider
 # should handle it
-
+# Maps the ResearchTaskType to the provider that can fulfill it.
+# For a news task, which provider should I use?
 from typing import Any
 
 from domain.research_task import ResearchTaskType
