@@ -1,3 +1,14 @@
+"""
+
+Macro specialist, one of the places the router sends work.
+
+Same shape as the earnings analyzer with a different persona and a shorter
+answer. There is no macro provider yet as of 10.4.26 so this returns the
+placeholder on nearly every run. - Raul
+
+
+"""
+
 from domain.analysis_result import AnalysisResult
 from domain.research_task import ResearchTaskType
 

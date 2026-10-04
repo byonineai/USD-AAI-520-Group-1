@@ -1,3 +1,16 @@
+"""
+
+Earnings specialist.
+
+This interprets numbers, it does not produce them. Any math belongs upstream in
+Python, so all this does is hand the model figures it was already given, and the
+prompt tells it not to invent.
+
+Once live data shows up this should work as-is.
+
+"""
+
+
 from domain.analysis_result import AnalysisResult
 from domain.research_result import ResearchResult
 from domain.research_task import ResearchTaskType

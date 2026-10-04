@@ -1,3 +1,15 @@
+"""
+Every model call in the project goes through here.
+
+One place for the provider and model. Groq was not the first choice, Google would not issue
+a key on a USD account.
+
+Temperature is an argument and not a constant because the classifier needs the
+same answer every time and the analysts do not.
+
+"""
+
+
 import os
 
 from groq import Groq
