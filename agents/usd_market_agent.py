@@ -6,6 +6,15 @@ from domain.usd_analysis_result import USDAnalysisResult
 class USDMarketAgent(USDAnalysisStrategy):
     def analyze(self, data: USDMarketData) -> USDAnalysisResult:
       summary = (
-        f"{data.stock_symbol} is trading at value"
+        f"{data.stock_symbol} is trading at value: "
         f"${data.price:.2f}."
+      )
+
+      return USDAnalysisResult(
+        summary = summary,
+        agent="market",
+        evidence=[
+          f"volume={data.volume}"
+          f"price={data.price}",
+        ]
       )
