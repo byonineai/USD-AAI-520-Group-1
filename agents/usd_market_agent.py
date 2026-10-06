@@ -4,6 +4,10 @@ from domain.usd_analysis_result import USDAnalysisResult
 # @Author: Marcelo Salvador
 
 class USDMarketAgent(USDAnalysisStrategy):
+    """
+    The responsibility of this class is to analyze market data.
+    It receives market data from the adapter
+    """
     def analyze(self, data: USDMarketData) -> USDAnalysisResult:
       summary = (
         f"{data.stock_symbol} is trading at value: "

@@ -15,5 +15,5 @@ class USDYahooFinanceAdapter(USDMarketDataProvider):
     return USDMarketData(
       stock_symbol=stock_symbol,
       price=info["regularMarketPrice"],
-      volume=["regularMarketVolume"]
+      volume=info["regularMarketVolume"]
     )

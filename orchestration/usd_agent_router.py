@@ -5,7 +5,7 @@ from orchestration.usd_agent_registry import USDAgentRegistry
 # Given a task type, select the appropriate specialist
 # Which agent should receive this task
 
-class AgentRouter:
+class USDAgentRouter:
 
     def __init__(self, registry: USDAgentRegistry):
         self.registry = registry

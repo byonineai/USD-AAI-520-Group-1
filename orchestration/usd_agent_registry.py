@@ -11,8 +11,8 @@ class USDAgentRegistry:
     # Later it can be asked registry.get("market_analysis") and receive Market Agent
   def register(
     self,
+    task_type: str,
     agent: USDAnalysisStrategy,
-    task_type: str
   ) -> None:
     self._agents[task_type] = agent
 
