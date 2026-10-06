@@ -13,7 +13,7 @@ class USDYahooFinanceAdapter(USDMarketDataProvider):
     info = ticker.info
 
     return USDMarketData(
-      symbol=stock_symbol,
+      stock_symbol=stock_symbol,
       price=info["regularMarketPrice"],
       volume=["regularMarketVolume"]
     )
