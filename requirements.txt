@@ -1,0 +1,116 @@
+# ============================================
+# Autonomous Investment Research Agent
+# Python Dependencies
+# ============================================
+
+
+# ============================================
+# Data Processing
+# ============================================
+
+pandas
+numpy
+
+
+# ============================================
+# Financial Market Data
+# Yahoo Finance
+# ============================================
+
+yfinance
+
+
+# ============================================
+# Financial News / Datasets
+# Kaggle datasets
+#
+# NewsAPI.org is accessed through requests,
+# so a separate NewsAPI package is not required.
+# ============================================
+
+kaggle
+
+
+# ============================================
+# HTTP / External API Requests
+#
+# Used for:
+# - NewsAPI
+# - SEC EDGAR
+# - Other REST APIs
+# ============================================
+
+requests
+
+
+# ============================================
+# Environment Variables
+#
+# Loads credentials from .env:
+# - OPENAI_API_KEY
+# - NEWS_API_KEY
+# - FRED_API_KEY
+# - SEC_USER_AGENT
+# ============================================
+
+python-dotenv
+
+
+# ============================================
+# Data Validation / Structured Models
+# ============================================
+
+pydantic
+
+
+# ============================================
+# OpenAI / LLM
+# ============================================
+
+openai
+
+
+# ============================================
+# Agent Workflow / Orchestration
+# ============================================
+
+langchain
+langgraph
+
+
+# ============================================
+# Economic Data
+# Federal Reserve FRED API
+# ============================================
+
+fredapi
+
+
+# ============================================
+# Backend API
+# React frontend -> FastAPI -> Agent System
+# ============================================
+
+fastapi
+uvicorn
+
+
+# ============================================
+# Testing
+# ============================================
+
+pytest
+
+
+# ============================================
+# Jupyter / VS Code Kernel
+# ============================================
+
+ipykernel
+
+# Agent orchestration
+langgraph
+
+# Google GenAI API
+
+google-genai
