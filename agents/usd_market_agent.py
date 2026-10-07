@@ -18,7 +18,7 @@ class USDMarketAgent(USDAnalysisStrategy):
         summary = summary,
         agent="market",
         evidence=[
-          f"volume={data.volume}"
-          f"price={data.price}",
+          f"volume={data.volume}",
+          f"price={data.price}"
         ]
       )
