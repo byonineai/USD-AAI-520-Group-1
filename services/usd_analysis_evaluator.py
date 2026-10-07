@@ -1,22 +1,41 @@
-from domain.usd_evaluation_result import (
-    USDEvaluationResult
-)
-# @Author: Marcelo Salvador
-# Its responsibility is to assess the aggregated report
-# and decide whether the research output meets your quality criteria.
+from domain.usd_evaluation_result import USDEvaluationResult
 
 class USDAnalysisEvaluator:
-
-  def evaluate(self, report):
+  '''
+    The evaluator checks whether there are enough specialists or not.
+    Whether there are any results, summary or evidence present.
+  '''
+  def __init__(self, minimum_specialists: int = 1):
+    self.minimum_specialists = minimum_specialists
+  def evaluate(self, report: dict) -> USDEvaluationResult:
 
     issues = []
 
-    if report["specialist_count"] < 3:
-      issues.append("There are insufficient sources")
+    specialist_count = report.get(
+      "specialist_count",
+      0
+    )
 
-    if not report["summaries"]:
-      issues.append("Missing Analysis")
+    results = report.get("results",[])
+
+    # Are there enough specialists?
+
+    if specialist_count < self.minimum_specialists:
+      issues.append("There are insufficient specialists!")
+
+    for result in results:
+    # Have we received any analysis yet?
+      if not results:
+        issues.append(
+          f"Missing summary: {result.agent}"
+        )
+      # Is there an evidence in every result?
+      if not result.evidence:
+        issues.append(
+          f"The missing evidence: {result.agent}"
+        )
+
     return USDEvaluationResult(
-      issues=issues,
-      passed=len(issues) == 0
+      passed=len(issues) == 0,
+      issues = issues
     )
