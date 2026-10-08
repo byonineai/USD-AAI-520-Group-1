@@ -1,0 +1,18 @@
+{
+   "NVDA": {
+      "stock_symbol": "NVDA",
+      "summaries": {
+         "market": "NVDA is trading at value: $180.30."
+      },
+      "quality_status": "unresolved_gaps",
+      "unresolved_gaps": [
+         "Insufficient research quality for test"
+      ],
+      "evidence": {
+         "market": [
+            "volume=50000000",
+            "price=180.3"
+         ]
+      }
+   }
+}

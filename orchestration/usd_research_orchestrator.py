@@ -9,6 +9,9 @@ from services.usd_optimizer import USDAnalysisOptimizer
 from domain.usd_market_data_provider import USDMarketDataProvider
 from domain.usd_research_task import USDResearchTask
 
+# Integrate memory to the Orchestrator
+from domain.usd_research_memory import USDResearchMemory
+from memory.usd_memory_repository import USDMemoryRespository
 
 class USDResearchOrchestrator:
     """
@@ -35,6 +38,7 @@ class USDResearchOrchestrator:
         aggregator: USDResultAggregator,
         evaluator: USDAnalysisEvaluator,
         optimizer: USDAnalysisOptimizer,
+        memory_repository: USDMemoryRespository,
         max_retries: int = 2
     ):
         self.planner = planner
@@ -43,6 +47,7 @@ class USDResearchOrchestrator:
         self.aggregator = aggregator
         self.evaluator = evaluator
         self.optimizer = optimizer
+        self.memory_repository = memory_repository
         self.max_retries = max_retries
 
     def run(self, stock_symbol: str) -> dict:
@@ -55,6 +60,11 @@ class USDResearchOrchestrator:
         # This prevents retries from falsely increasing
         # the specialist count.
         results_by_agent = {}
+
+        # Now the system can determine wether it has seen a stock symbol before or not
+        the_previous_memory = self.memory_repository.get(
+            stock_symbol
+        )
 
         # --------------------------------------------------
         # Planning
@@ -236,6 +246,16 @@ class USDResearchOrchestrator:
         if not evaluation.passed:
             unresolved_gaps = evaluation.problems
 
+        current_memory_storage = self._build_the_memory(
+            stock_symbol = stock_symbol,
+            the_combined_report = the_combined_report,
+            evaluation= evaluation
+        )
+
+        self.memory_repository.save(
+            current_memory_storage
+        )
+
         return {
             "stock_symbol": stock_symbol,
             "status": state.value,
@@ -245,8 +265,46 @@ class USDResearchOrchestrator:
             "final_evaluation": evaluation,
             "retry_count": retry_count,
             "max_retries": self.max_retries,
-            "unresolved_gaps": unresolved_gaps
+            "curremt_memory_storage": current_memory_storage,
+            "the_previous_memory": the_previous_memory,
+            "unresolved_gaps": unresolved_gaps,
         }
+
+    def _build_the_memory(
+        self,
+        stock_symbol: str,
+        the_combined_report: dict,
+        evaluation
+    ) -> USDResearchMemory:
+
+        evidence = {}
+        summaries = {}
+
+        for result in the_combined_report["results"]:
+
+            summaries[result.agent] = result.summary
+
+            evidence[result.agent] = result.evidence
+
+        unresolved_gaps = []
+
+        if not evaluation.passed:
+            unresolved_gaps = evaluation.problems
+
+        return USDResearchMemory(
+            stock_symbol=stock_symbol,
+            quality_status=(
+                "passed"
+                if evaluation.passed
+                else "unresolved_gaps"
+            ),
+            summaries=summaries,
+            evidence=evidence,
+            unresolved_gaps=unresolved_gaps
+        )
+
+
+
     def _collect_data(
       self,
       task: USDResearchTask
