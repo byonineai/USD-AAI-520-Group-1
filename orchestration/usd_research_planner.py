@@ -5,13 +5,9 @@ from domain.usd_research_task import USDResearchTask
 
 class USDResearchPlanner:
 
-  def plan(self, stock_symbol: str):
+  def plan(self, stock_symbol: str) -> list[USDResearchTask]:
 
     return [
-      USDResearchTask(
-        task_type="news_analysis",
-        stock_symbol = stock_symbol
-    ),
       USDResearchTask(
         task_type="market_analysis",
         stock_symbol = stock_symbol

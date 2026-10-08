@@ -13,6 +13,9 @@ from domain.usd_research_task import USDResearchTask
 from domain.usd_research_memory import USDResearchMemory
 from memory.usd_memory_repository import USDMemoryRespository
 
+# Tool Registry
+from orchestration.usd_tool_registry import USDToolRegistry
+
 class USDResearchOrchestrator:
     """
     This class is a façade. Instead of manually coordinating everything like
@@ -33,7 +36,8 @@ class USDResearchOrchestrator:
     def __init__(
         self,
         planner: USDResearchPlanner,
-        provider: USDMarketDataProvider,
+        tool_registry: USDToolRegistry,
+        # provider: USDMarketDataProvider,
         router: USDAgentRouter,
         aggregator: USDResultAggregator,
         evaluator: USDAnalysisEvaluator,
@@ -42,7 +46,8 @@ class USDResearchOrchestrator:
         max_retries: int = 2
     ):
         self.planner = planner
-        self.provider = provider
+        self.tool_registry = tool_registry
+        # self.provider = provider
         self.router = router
         self.aggregator = aggregator
         self.evaluator = evaluator
@@ -309,13 +314,22 @@ class USDResearchOrchestrator:
       self,
       task: USDResearchTask
     ):
-
-      if task.task_type == "market_analysis":
-
-        return self.provider.get_market_data(
-          task.stock_symbol
+        tool = self.tool_registry.get(
+            task.task_type
         )
 
-      raise ValueError(
-        f"This is an unsupported task type: {task.task_type}"
-      )
+        return tool.fetch(
+            task.stock_symbol
+        )
+
+    # Removed tight coupling
+
+    #   if task.task_type == "market_analysis":
+
+    #     return self.provider.get_market_data(
+    #       task.stock_symbol
+    #     )
+
+    #   raise ValueError(
+    #     f"This is an unsupported task type: {task.task_type}"
+    #   )
