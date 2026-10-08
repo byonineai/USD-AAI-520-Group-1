@@ -2,14 +2,14 @@
    "NVDA": {
       "stock_symbol": "NVDA",
       "summaries": {
-         "market": "NVDA market analysis completed."
+         "market": "NVDA is trading at value: $230.48."
       },
       "quality_status": "passed",
       "unresolved_gaps": [],
       "evidence": {
          "market": [
-            "price=180.50",
-            "volume=1000000"
+            "volume=113879735",
+            "price=230.48"
          ]
       }
    }

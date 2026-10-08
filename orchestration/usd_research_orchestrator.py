@@ -2,9 +2,9 @@ from orchestration.usd_research_state import USDResearchState
 from orchestration.usd_research_planner import USDResearchPlanner
 from orchestration.usd_agent_router import USDAgentRouter
 
-from services.usd_aggregator import USDResultAggregator
+from services.usd_result_aggregator import USDResultAggregator
 from services.usd_analysis_evaluator import USDAnalysisEvaluator
-from services.usd_optimizer import USDAnalysisOptimizer
+from services.usd_analysis_optimizer import USDAnalysisOptimizer
 
 from domain.usd_market_data_provider import USDMarketDataProvider
 from domain.usd_research_task import USDResearchTask
@@ -249,7 +249,7 @@ class USDResearchOrchestrator:
         unresolved_gaps = []
 
         if not evaluation.passed:
-            unresolved_gaps = evaluation.problems
+            unresolved_gaps = evaluation.issues
 
         current_memory_storage = self._build_the_memory(
             stock_symbol = stock_symbol,
@@ -294,7 +294,7 @@ class USDResearchOrchestrator:
         unresolved_gaps = []
 
         if not evaluation.passed:
-            unresolved_gaps = evaluation.problems
+            unresolved_gaps = evaluation.issues
 
         return USDResearchMemory(
             stock_symbol=stock_symbol,
