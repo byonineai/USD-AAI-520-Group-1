@@ -2,14 +2,22 @@
    "NVDA": {
       "stock_symbol": "NVDA",
       "summaries": {
-         "market": "NVDA is trading at value: $230.48."
+         "market": "NVDA is trading at value: $229.28.",
+         "news": "Found 10 recent news articles for NVDA."
       },
       "quality_status": "passed",
       "unresolved_gaps": [],
       "evidence": {
          "market": [
-            "volume=113879735",
-            "price=230.48"
+            "volume=84645559",
+            "price=229.28"
+         ],
+         "news": [
+            "PRNewswire: AI Revenue Questions Pull Semiconductor Stocks Off October Highs",
+            "Naturalnews.com: AI Chip Stocks Fall After Report on OpenAI Revenue Shortfall",
+            "Biztoc.com: Elon Musk Just Made a Surprising Statement About AI Chips. Here's the Stock It Helps",
+            "Pypi.org: orblivion added to PyPI",
+            "Biztoc.com: Management Raised the Bar For NVIDIA Stock; Does The Chart Agree?"
          ]
       }
    }

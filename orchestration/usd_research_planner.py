@@ -12,4 +12,9 @@ class USDResearchPlanner:
         task_type="market_analysis",
         stock_symbol = stock_symbol
       ),
+      #news analysis orchestrator
+      USDResearchTask(
+        task_type="news_analysis",
+        stock_symbol=stock_symbol
+      )
   ]
