@@ -81,7 +81,11 @@ class USDResearchOrchestrator:
         state = USDResearchState.PLANNING
         state_history.append(state.value)
 
-        tasks = self.planner.plan(stock_symbol)
+        # Memory Influencing Behavior
+        tasks = self.planner.plan(
+            stock_symbol = stock_symbol,
+            previous_memory = the_previous_memory
+        )
 
         # --------------------------------------------------
         # Execute planned tasks
