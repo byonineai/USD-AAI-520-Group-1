@@ -2,7 +2,8 @@
    "NVDA": {
       "stock_symbol": "NVDA",
       "summaries": {
-         "market": "NVDA is trading at value: $228.52."
+         "market": "NVDA is trading at value: $228.52.",
+         "macro": "The collected 4 The macro economic indicators for NVDA "
       },
       "quality_status": "passed",
       "unresolved_gaps": [],
@@ -10,6 +11,12 @@
          "market": [
             "volume=83671511",
             "price=228.52"
+         ],
+         "macro": [
+            "Federal Funds Rate  FEDFUNDS 3.75 as of 2026-09-01 ",
+            "Consumer Price Index  CPIAUCSL 336.298 as of 2026-09-01 ",
+            "10-Year Treasury Rate  DGS10 5.24 as of 2026-10-09 ",
+            "Unemployment Rate  UNRATE 4.2 as of 2026-09-01 "
          ]
       }
    }

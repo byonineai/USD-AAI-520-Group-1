@@ -12,4 +12,8 @@ class USDResearchPlanner:
         task_type="market_analysis",
         stock_symbol = stock_symbol
       ),
+      USDResearchTask(
+        task_type="macro_analysis",
+        stock_symbol=stock_symbol
+      )
   ]
