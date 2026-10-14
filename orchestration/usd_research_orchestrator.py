@@ -9,6 +9,7 @@ from services.usd_analysis_generator import USDAnalysisGenerator
 
 from domain.usd_market_data_provider import USDMarketDataProvider
 from domain.usd_research_task import USDResearchTask
+from services.usd_final_report_builder import USDFinalReportBuilder
 
 # Integrate memory to the Orchestrator
 from domain.usd_research_memory import USDResearchMemory
@@ -44,6 +45,7 @@ class USDResearchOrchestrator:
         analysis_generator: USDAnalysisGenerator,
         evaluator: USDAnalysisEvaluator,
         optimizer: USDAnalysisOptimizer,
+        final_report_builder: USDFinalReportBuilder,
         memory_repository: USDMemoryRespository,
         max_retries: int = 2
     ):
@@ -55,6 +57,7 @@ class USDResearchOrchestrator:
         self.analysis_generator = analysis_generator
         self.evaluator = evaluator
         self.optimizer = optimizer
+        self.final_report_builder = final_report_builder
         self.memory_repository = memory_repository
         self.max_retries = max_retries
 
@@ -281,6 +284,17 @@ class USDResearchOrchestrator:
         if not evaluation.passed:
             unresolved_gaps = evaluation.issues
 
+        # FINAL REPORT INCLUSION
+
+        final_report = self.final_report_builder.build(
+            stock_symbol=stock_symbol,
+            status = state.value,
+            generated_analysis = the_generated_analysis,
+            evaluation = evaluation,
+            retry_count = retry_count,
+            unresolved_gaps = unresolved_gaps
+        )
+
         current_memory_storage = self._build_the_memory(
             stock_symbol = stock_symbol,
             the_combined_report = the_combined_report,
@@ -303,7 +317,8 @@ class USDResearchOrchestrator:
             "curremt_memory_storage": current_memory_storage,
             "the_previous_memory": the_previous_memory,
             "unresolved_gaps": unresolved_gaps,
-            "generated_analysis": the_generated_analysis
+            "generated_analysis": the_generated_analysis,
+            "final_report": final_report
         }
 
     def _build_the_memory(
