@@ -5,6 +5,7 @@ from orchestration.usd_agent_router import USDAgentRouter
 from services.usd_result_aggregator import USDResultAggregator
 from services.usd_analysis_evaluator import USDAnalysisEvaluator
 from services.usd_analysis_optimizer import USDAnalysisOptimizer
+from services.usd_analysis_generator import USDAnalysisGenerator
 
 from domain.usd_market_data_provider import USDMarketDataProvider
 from domain.usd_research_task import USDResearchTask
@@ -40,6 +41,7 @@ class USDResearchOrchestrator:
         # provider: USDMarketDataProvider,
         router: USDAgentRouter,
         aggregator: USDResultAggregator,
+        analysis_generator: USDAnalysisGenerator,
         evaluator: USDAnalysisEvaluator,
         optimizer: USDAnalysisOptimizer,
         memory_repository: USDMemoryRespository,
@@ -50,6 +52,7 @@ class USDResearchOrchestrator:
         # self.provider = provider
         self.router = router
         self.aggregator = aggregator
+        self.analysis_generator = analysis_generator
         self.evaluator = evaluator
         self.optimizer = optimizer
         self.memory_repository = memory_repository
@@ -124,6 +127,12 @@ class USDResearchOrchestrator:
             list(results_by_agent.values())
         )
 
+        # Analysis Generation
+
+        the_generated_analysis = self.analysis_generator.generate(
+            the_combined_report
+        )
+
         # --------------------------------------------------
         # Evaluation
         # --------------------------------------------------
@@ -132,7 +141,7 @@ class USDResearchOrchestrator:
         state_history.append(state.value)
 
         evaluation = self.evaluator.evaluate(
-            the_combined_report
+            the_generated_analysis
         )
 
         the_optimization_actions = []
@@ -232,11 +241,28 @@ class USDResearchOrchestrator:
             # Evaluate again
             # --------------------------------------------------
 
+            # state = USDResearchState.EVALUATING
+            # state_history.append(state.value)
+
+            # evaluation = self.evaluator.evaluate(
+            #     the_combined_report
+            # )
+
+            # Generate the analysis again
+            # This is necessary becaue if the optimizer obtains newer research
+            # the synthesis needs to be regenerated; otherwise, a stale synthesis
+            # will be created.
+            the_generated_analysis = self.analysis_generator.generate(
+                the_combined_report
+            )
+
+            # Evaluate again
+
             state = USDResearchState.EVALUATING
             state_history.append(state.value)
 
             evaluation = self.evaluator.evaluate(
-                the_combined_report
+                the_generated_analysis
             )
 
         # --------------------------------------------------
@@ -273,6 +299,7 @@ class USDResearchOrchestrator:
             "curremt_memory_storage": current_memory_storage,
             "the_previous_memory": the_previous_memory,
             "unresolved_gaps": unresolved_gaps,
+            "generated_analysis": the_generated_analysis
         }
 
     def _build_the_memory(
