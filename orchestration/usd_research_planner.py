@@ -16,6 +16,10 @@ class USDResearchPlanner:
       USDResearchTask(
         task_type="macro_analysis",
         stock_symbol=stock_symbol
+      ),
+      USDResearchTask(
+        task_type="earnings_analysis",
+        stock_symbol=stock_symbol
       )
   ]
     # No previous run existent
@@ -63,6 +67,14 @@ class USDResearchPlanner:
                 "inflation",
                 "unemployment",
                 "treasury"
+            ],
+
+            "earnings_analysis": [
+                "earnings",
+                "filing",
+                "10-k",
+                "10-q",
+                "sec"
             ],
         }
 
