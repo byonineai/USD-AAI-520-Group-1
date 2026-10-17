@@ -13,7 +13,11 @@ import os
 
 import requests
 
-from domain.usd_earnings_data import USDEarningsData, USDSecFiling
+from domain.usd_earnings_data import (
+    USDEarningsData,
+    USDSecFiling,
+    USDEarningsMetrics,
+)
 from domain.usd_earnings_data_provider import USDEarningsDataProvider
 from tools.usd_research_tool import USDResearchTool
 
@@ -27,6 +31,10 @@ class USDSecEdgarAdapter(USDEarningsDataProvider, USDResearchTool):
     SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
     ARCHIVE_URL = "https://www.sec.gov/Archives/edgar/data"
 
+    COMPANY_FACTS_URL = (
+    "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
+)
+
     # The two periodic report forms. Annual and quarterly.
     EARNINGS_FORMS = ["10-K", "10-Q"]
 
@@ -36,6 +44,30 @@ class USDSecEdgarAdapter(USDEarningsDataProvider, USDResearchTool):
 
     # SEC rejects anonymous traffic. There is no API key and no signup, just
     # a contact string, and it lives in .env so it never reaches the repo.
+
+    FINANCIAL_TAGS = {
+        "revenue": [
+            "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "Revenues",
+            "SalesRevenueNet",
+        ],
+
+        "gross_profit": [
+            "GrossProfit",
+        ],
+
+        "operating_income": [
+            "OperatingIncomeLoss",
+        ],
+
+        "net_income": [
+            "NetIncomeLoss",
+        ],
+
+        "diluted_eps": [
+            "EarningsPerShareDiluted",
+        ],
+    }
 
     def __init__(self, user_agent: str | None = None):
         self.user_agent = user_agent or os.getenv("SEC_USER_AGENT")
@@ -158,6 +190,29 @@ class USDSecEdgarAdapter(USDEarningsDataProvider, USDResearchTool):
             if len(filings) >= self.MAX_FILINGS:
                 break
 
+        metrics = None
+
+        if filings:
+
+            company_facts_response = requests.get(
+                self.COMPANY_FACTS_URL.format(
+                    cik=cik
+                ),
+                headers=self.headers(),
+                timeout=10,
+            )
+
+            company_facts_response.raise_for_status()
+
+            company_facts = (
+                company_facts_response.json()
+            )
+
+            metrics = self._extract_financial_metrics(
+                company_facts,
+                filings[0]
+            )
+
         # -------------------------------------------------------------
         # Step 4. Hand back the clean object
         # -------------------------------------------------------------
@@ -168,5 +223,97 @@ class USDSecEdgarAdapter(USDEarningsDataProvider, USDResearchTool):
             stock_symbol=stock_symbol,
             cik=cik,
             company_name=company_name,
+            metrics = metrics,
             filings=filings
+        )
+
+    def _usd_find_financial_fact(
+        self,
+        company_facts: dict,
+        possible_tags: list[str],
+        filing: USDSecFiling,
+        unit: str,
+    ) -> float | None:
+
+        us_gaap = (
+            company_facts
+            .get("facts", {})
+            .get("us-gaap", {})
+        )
+
+        for tag in possible_tags:
+
+            concept = us_gaap.get(tag)
+
+            if concept is None:
+                continue
+
+            values = (
+                concept
+                .get("units", {})
+                .get(unit, [])
+            )
+
+            candidates = [
+                fact
+                for fact in values
+                if (
+                    fact.get("accn")
+                    == filing.accession_number
+
+                    and fact.get("form")
+                    == filing.form
+
+                    and fact.get("end")
+                    == filing.report_name
+                )
+            ]
+
+            if candidates:
+                return candidates[0].get("val")
+
+        return None
+
+    def _extract_financial_metrics(
+        self,
+        company_facts: dict,
+        filing: USDSecFiling,
+    ) -> USDEarningsMetrics:
+
+        return USDEarningsMetrics(
+
+            revenue=self._usd_find_financial_fact(
+                company_facts,
+                self.FINANCIAL_TAGS["revenue"],
+                filing,
+                "USD",
+            ),
+
+             operating_income=self._usd_find_financial_fact(
+                company_facts,
+                self.FINANCIAL_TAGS["operating_income"],
+                filing,
+                "USD",
+            ),
+
+            gross_profit=self._usd_find_financial_fact(
+                company_facts,
+                self.FINANCIAL_TAGS["gross_profit"],
+                filing,
+                "USD",
+            ),
+
+            net_income=self._usd_find_financial_fact(
+                company_facts,
+                self.FINANCIAL_TAGS["net_income"],
+                filing,
+                "USD",
+            ),
+
+            diluted_eps=self._usd_find_financial_fact(
+                company_facts,
+                self.FINANCIAL_TAGS["diluted_eps"],
+                filing,
+                "USD/shares",
+            ),
         )

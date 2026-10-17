@@ -1,4 +1,5 @@
-from orchestration.usd_research_state import USDResearchState
+import threading
+
 from orchestration.usd_research_planner import USDResearchPlanner
 from orchestration.usd_agent_router import USDAgentRouter
 
@@ -7,7 +8,8 @@ from services.usd_analysis_evaluator import USDAnalysisEvaluator
 from services.usd_analysis_optimizer import USDAnalysisOptimizer
 from services.usd_analysis_generator import USDAnalysisGenerator
 
-from domain.usd_market_data_provider import USDMarketDataProvider
+from orchestration.usd_research_state import (USDResearchState, STATE_MESSAGES)
+
 from domain.usd_research_task import USDResearchTask
 from services.usd_final_report_builder import USDFinalReportBuilder
 
@@ -17,6 +19,10 @@ from memory.usd_memory_repository import USDMemoryRespository
 
 # Tool Registry
 from orchestration.usd_tool_registry import USDToolRegistry
+
+from utils.usd_console_status import (
+    usd_animate_progress_status
+)
 
 class USDResearchOrchestrator:
     """
@@ -82,7 +88,11 @@ class USDResearchOrchestrator:
         # --------------------------------------------------
 
         state = USDResearchState.PLANNING
-        state_history.append(state.value)
+
+        self._usd_update_state(
+            state,
+            state_history
+        )
 
         # Memory Influencing Behavior
         tasks = self.planner.plan(
@@ -100,7 +110,11 @@ class USDResearchOrchestrator:
             state = USDResearchState.COLLECTING
 
             if state.value not in state_history:
-                state_history.append(state.value)
+
+                self._usd_update_state(
+                    state,
+                    state_history
+                )
 
             data = self._collect_data(task)
 
@@ -108,7 +122,10 @@ class USDResearchOrchestrator:
             state = USDResearchState.ANALYZING
 
             if state.value not in state_history:
-                state_history.append(state.value)
+                self._usd_update_state(
+                        state,
+                        state_history
+                    )
 
             agent = self.router.route(
                 task.task_type
@@ -128,7 +145,10 @@ class USDResearchOrchestrator:
         # --------------------------------------------------
 
         state = USDResearchState.AGGREGATING
-        state_history.append(state.value)
+        self._usd_update_state(
+            state,
+            state_history
+        )
 
         the_combined_report = self.aggregator.aggregate_results(
             list(results_by_agent.values())
@@ -136,16 +156,46 @@ class USDResearchOrchestrator:
 
         # Analysis Generation
 
-        the_generated_analysis = self.analysis_generator.generate(
-            the_combined_report
+        state = USDResearchState.GENERATING
+
+        state_history.append(state.value)
+
+        usd_stop_event = threading.Event()
+
+        usd_animation_thread = threading.Thread(
+            target=usd_animate_progress_status,
+            args = (
+                STATE_MESSAGES[state],
+                usd_stop_event
+            ),
+            daemon=True
         )
+
+        usd_animation_thread.start()
+
+        try:
+
+            the_generated_analysis = (
+                self.analysis_generator.generate(
+                    the_combined_report
+                )
+            )
+        finally:
+            usd_stop_event.set()
+            usd_animation_thread.join()
+
+        print("Report generation complete.")
 
         # --------------------------------------------------
         # Evaluation
         # --------------------------------------------------
 
         state = USDResearchState.EVALUATING
-        state_history.append(state.value)
+
+        self._usd_update_state(
+            state,
+            state_history
+        )
 
         evaluation = self.evaluator.evaluate(
             the_generated_analysis
@@ -168,7 +218,11 @@ class USDResearchOrchestrator:
             # --------------------------------------------------
 
             state = USDResearchState.OPTIMIZING
-            state_history.append(state.value)
+
+            self._usd_update_state(
+                state,
+                state_history
+            )
 
             the_optimization_actions = self.optimizer.optimize(
                 evaluation
@@ -194,7 +248,11 @@ class USDResearchOrchestrator:
                     # ------------------------------------------
 
                     state = USDResearchState.COLLECTING
-                    state_history.append(state.value)
+
+                    self._usd_update_state(
+                                state,
+                                state_history
+                            )
 
                     data = self._collect_data(
                         retry_task
@@ -205,7 +263,11 @@ class USDResearchOrchestrator:
                     # ------------------------------------------
 
                     state = USDResearchState.ANALYZING
-                    state_history.append(state.value)
+
+                    self._usd_update_state(
+                            state,
+                            state_history
+                        )
 
                     agent = self.router.route(
                         retry_task.task_type
@@ -238,7 +300,11 @@ class USDResearchOrchestrator:
             # --------------------------------------------------
 
             state = USDResearchState.AGGREGATING
-            state_history.append(state.value)
+
+            self._usd_update_state(
+                state,
+                state_history
+            )
 
             the_combined_report = self.aggregator.aggregate_results(
                 list(results_by_agent.values())
@@ -256,6 +322,13 @@ class USDResearchOrchestrator:
             # )
 
             # Generate the analysis again
+
+            state = USDResearchState.GENERATING
+
+            state_history.append(
+                state.value
+            )
+
             # This is necessary becaue if the optimizer obtains newer research
             # the synthesis needs to be regenerated; otherwise, a stale synthesis
             # will be created.
@@ -266,18 +339,14 @@ class USDResearchOrchestrator:
             # Evaluate again
 
             state = USDResearchState.EVALUATING
-            state_history.append(state.value)
+            self._usd_update_state(
+                state,
+                state_history
+            )
 
             evaluation = self.evaluator.evaluate(
                 the_generated_analysis
             )
-
-        # --------------------------------------------------
-        # Completion
-        # --------------------------------------------------
-
-        state = USDResearchState.COMPLETE
-        state_history.append(state.value)
 
         unresolved_gaps = []
 
@@ -288,7 +357,7 @@ class USDResearchOrchestrator:
 
         final_report = self.final_report_builder.build(
             stock_symbol=stock_symbol,
-            status = state.value,
+            status = USDResearchState.COMPLETE.value,
             generated_analysis = the_generated_analysis,
             evaluation = evaluation,
             retry_count = retry_count,
@@ -303,6 +372,15 @@ class USDResearchOrchestrator:
 
         self.memory_repository.save(
             current_memory_storage
+        )
+
+        # Completion
+
+        state = USDResearchState.COMPLETE
+
+        self._usd_update_state(
+            state,
+            state_history
         )
 
         return {
@@ -368,14 +446,16 @@ class USDResearchOrchestrator:
             task.stock_symbol
         )
 
-    # Removed tight coupling
+    def _usd_update_state(
+        self,
+        state: USDResearchState,
+        state_history: list[str]
+    ):
+        state_history.append(
+            state.value
+        )
 
-    #   if task.task_type == "market_analysis":
-
-    #     return self.provider.get_market_data(
-    #       task.stock_symbol
-    #     )
-
-    #   raise ValueError(
-    #     f"This is an unsupported task type: {task.task_type}"
-    #   )
+        print(
+            STATE_MESSAGES[state],
+            flush=True
+        )

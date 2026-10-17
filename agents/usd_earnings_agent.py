@@ -50,10 +50,40 @@ class USDEarningsAgent(USDAnalysisStrategy):
 
         latest = data.filings[0]
 
-        summary = (
-            f"{data.company_name} ({data.stock_symbol}) most recently "
-            f"filed a {latest.form} on {latest.filing_date}. "
-            f"{len(data.filings)} recent periodic filings were reviewed."
+        earnings_metrics =  data.metrics
+
+        summary = [
+            (
+                f"{data.company_name} ({data.stock_symbol}) most recently "
+                f"filed a {latest.form} on {latest.filing_date}."
+            ),
+            (
+                f"{len(data.filings)} recent periodic filings were reviewed."
+            )
+        ]
+
+        if earnings_metrics is not None:
+
+            if earnings_metrics.revenue is not None:
+                summary.append(
+                    f"Reported revenue was "
+                    f"${earnings_metrics.revenue:,.0f}."
+                )
+
+            if earnings_metrics.net_income is not None:
+                summary.append(
+                    f"Reported net income was "
+                    f"${earnings_metrics.net_income:,.0f}."
+                )
+
+            if earnings_metrics.diluted_eps is not None:
+                summary.append(
+                    f"Diluted EPS was "
+                    f"${earnings_metrics.diluted_eps:.2f}."
+                )
+
+        summary = " ".join(
+            summary
         )
 
         # -------------------------------------------------------------
@@ -69,6 +99,69 @@ class USDEarningsAgent(USDAnalysisStrategy):
             evidence.append(
                 f"{filing.form} filed {filing.filing_date} ({filing.url})"
             )
+
+        if earnings_metrics is not None:
+
+            if earnings_metrics.revenue is not None:
+                evidence.append(
+                    f"revenue={earnings_metrics.revenue}"
+                )
+
+            if earnings_metrics.gross_profit is not None:
+                evidence.append(
+                    f"gross_profit={earnings_metrics.gross_profit}"
+                )
+
+            if earnings_metrics.operating_income is not None:
+                evidence.append(
+                    f"operating_income={earnings_metrics.operating_income}"
+                )
+
+            if earnings_metrics.net_income is not None:
+                evidence.append(
+                    f"net_income={earnings_metrics.net_income}"
+                )
+
+            if earnings_metrics.diluted_eps is not None:
+                evidence.append(
+                    f"diluted_eps={earnings_metrics.diluted_eps}"
+                )
+
+            if (
+                earnings_metrics.revenue is not None
+                and earnings_metrics.revenue != 0
+            ):
+
+                if earnings_metrics.gross_profit is not None:
+                    gross_margin = (
+                        earnings_metrics.gross_profit
+                        / earnings_metrics.revenue
+                    ) * 100
+
+                    evidence.append(
+                        f"gross_margin={gross_margin:.2f}%"
+                    )
+
+                if earnings_metrics.operating_income is not None:
+                    operating_margin = (
+                        earnings_metrics.operating_income
+                        / earnings_metrics.revenue
+                    ) * 100
+
+                    evidence.append(
+                        f"operating_margin={operating_margin:.2f}%"
+                    )
+
+                if earnings_metrics.net_income is not None:
+                    net_margin = (
+                        earnings_metrics.net_income
+                        / earnings_metrics.revenue
+                    ) * 100
+
+                    evidence.append(
+                        f"net_margin={net_margin:.2f}%"
+                    )
+
 
         return USDAnalysisResult(
             agent="earnings",

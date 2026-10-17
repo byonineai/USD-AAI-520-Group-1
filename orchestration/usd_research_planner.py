@@ -24,7 +24,7 @@ class USDResearchPlanner:
         USDResearchTask(
             task_type="news_analysis",
             stock_symbol=stock_symbol
-        ),
+      ),
   ]
     # No previous run existent
     if previous_memory is None:

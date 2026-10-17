@@ -2,21 +2,45 @@
    "NVDA": {
       "stock_symbol": "NVDA",
       "summaries": {
-         "market": "NVDA is trading at value: $221.50.",
-         "macro": "The collected 4 The macro economic indicators for NVDA "
+         "market": "NVDA is trading at value: $214.13.",
+         "macro": "The collected 4 The macro economic indicators for NVDA ",
+         "earnings": "NVIDIA CORP (NVDA) most recently filed a 10-Q on 2026-08-26. 5 recent periodic filings were reviewed. Reported revenue was $177,837,000,000. Reported net income was $118,010,000,000. Diluted EPS was $4.85.",
+         "news": "Found 10 recent news articles for NVDA."
       },
       "quality_status": "passed",
       "unresolved_gaps": [],
       "evidence": {
          "market": [
-            "volume=45386086",
-            "price=221.5"
+            "volume=120302335",
+            "price=214.13"
          ],
          "macro": [
             "Federal Funds Rate  FEDFUNDS 3.75 as of 2026-09-01 ",
             "Consumer Price Index  CPIAUCSL 336.298 as of 2026-09-01 ",
-            "10-Year Treasury Rate  DGS10 5.24 as of 2026-10-09 ",
+            "10-Year Treasury Rate  DGS10 5.1 as of 2026-10-15 ",
             "Unemployment Rate  UNRATE 4.2 as of 2026-09-01 "
+         ],
+         "earnings": [
+            "10-Q filed 2026-08-26 (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm)",
+            "10-Q filed 2026-05-20 (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm)",
+            "10-K filed 2026-02-25 (https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm)",
+            "10-Q filed 2025-11-19 (https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm)",
+            "10-Q filed 2025-08-27 (https://www.sec.gov/Archives/edgar/data/1045810/000104581025000209/nvda-20250727.htm)",
+            "revenue=177837000000",
+            "gross_profit=133299000000",
+            "operating_income=117270000000",
+            "net_income=118010000000",
+            "diluted_eps=4.85",
+            "gross_margin=74.96%",
+            "operating_margin=65.94%",
+            "net_margin=66.36%"
+         ],
+         "news": [
+            "Biztoc.com: CoreWeave stock sinks in pre-market as AI financing worries linger",
+            "Github.com: Show HN: I made an MCP Agents can reason every finance data the first time",
+            "Biztoc.com: Lenders Are Getting Nervous About CoreWeave. I'd Still Buy Nvidia Stock",
+            "Ixdf.org: Design Accessible Navigation for Keyboards and Screen Readers",
+            "Nvidia.com: Mercedes-Benz and NVIDIA Expand Strategic Partnership to Advance Safe Highly Automated Driving in the Next Decade"
          ]
       }
    }

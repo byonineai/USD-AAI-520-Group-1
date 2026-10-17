@@ -84,6 +84,22 @@ class USDAnalysisGenerator:
     - Explain relevant relationships between specialist findings.
     - Do not omit a specialist when evidence has been supplied.
 
+    - Do not claim that a value increased, decreased, improved,
+    worsened, accelerated, or declined unless evidence from
+    multiple time periods is provided.
+    - Do not infer market liquidity, investor sentiment, valuation
+    quality, financial strength, or financial weakness from a
+    single metric unless supporting evidence is provided.
+    - When comparative evidence is unavailable, report the value
+    factually without assigning a qualitative label.
+    - If an interpretation cannot be supported by the supplied
+    evidence, explicitly state that the available evidence is
+    insufficient to make that interpretation.
+    - Do not infer a trend from a single observation.
+    - General financial relationships may be explained, but they
+    must be clearly identified as general interpretation rather
+    than a company-specific conclusion.
+
     SPECIALIST FINDINGS:
 
     {all_specialist_findings}
