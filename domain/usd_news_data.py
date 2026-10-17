@@ -1,13 +1,24 @@
 from dataclasses import dataclass
-# @author: Marcelo Salvador
+# @author: Akua Duffour
+
 
 @dataclass
-class USDAnalysisResult:
-  """A data class representing a the standard structure returned by specialist agents.
-
-  Attributes:
-        summary: A summary of the specialist agent's analysis.
-        agent: The name of the identifier of the specialist agent producing the result.
+class USDNewsArticle:
   """
-  summary: str
-  agent: str
+  A data class representing one normalized news article.
+  """
+  title: str
+  source: str
+  description: str | None = None
+  url: str | None = None
+  published_at: str | None = None
+
+
+@dataclass
+class USDNewsData:
+  """
+  A data class representing normalized news for a stock symbol.
+  """
+  stock_symbol: str
+  total_results: int
+  articles: list[USDNewsArticle]

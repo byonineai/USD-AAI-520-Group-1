@@ -20,7 +20,11 @@ class USDResearchPlanner:
       USDResearchTask(
         task_type="earnings_analysis",
         stock_symbol=stock_symbol
-      )
+      ),
+        USDResearchTask(
+            task_type="news_analysis",
+            stock_symbol=stock_symbol
+        ),
   ]
     # No previous run existent
     if previous_memory is None:
@@ -76,6 +80,15 @@ class USDResearchPlanner:
                 "10-q",
                 "sec"
             ],
+
+         "news_analysis": [
+             "news",
+             "article",
+             "headline",
+             "press",
+             "media",
+         ],
+
         }
 
      keywords = mapping.get(
