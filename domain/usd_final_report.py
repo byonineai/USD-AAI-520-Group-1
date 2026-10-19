@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+# Data contracts between specialist agents and adapters.
 from domain.usd_analysis_result import USDAnalysisResult
 
 @dataclass

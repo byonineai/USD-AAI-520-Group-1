@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 # @author: Akua Duffour
-
+# Data contracts between specialist agents and adapters.
 
 @dataclass
 class USDNewsArticle:

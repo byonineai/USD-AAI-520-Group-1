@@ -26,6 +26,9 @@ from utils.usd_console_status import (
 
 class USDResearchOrchestrator:
     """
+
+    Coordinates the autonomous investment research workflow.
+
     This class is a façade. Instead of manually coordinating everything like
     it was done on the main.ipynb, this orchestrator does the coordination.
 
@@ -33,19 +36,74 @@ class USDResearchOrchestrator:
     optimizer are passed to the constructor and become part of this
     entry point.
 
+    Note: prompt chaining is encapsulated on the news specialist and should not
+    be directly implement on this class.
+
     The complete workflow can be run with:
 
         orchestrator.run("NVDA")
 
     This orchestrator will change later and conditional blocks will be
     removed. For now, one command coordinates the entire pipeline.
+
+    This section of the comments has been generated with AI assistance
+
+        Agent Functions
+    ---------------
+    1. Planning:
+       USDResearchPlanner determines which research tasks should execute
+       for the requested stock symbol.
+
+    2. Dynamic Tool Use:
+       USDToolRegistry resolves each research task to the appropriate
+       external data adapter at runtime.
+
+    3. Self-Reflection / Quality Assessment:
+       USDAnalysisEvaluator evaluates the generated analysis before the
+       result is accepted as complete.
+
+    4. Learning Across Runs:
+       USDMemoryRepository retrieves previous research memory and persists
+       the latest research results for future runs.
+
+    Workflow Patterns
+    -----------------
+    1. Prompt Chaining:
+       News-specific prompt chaining is delegated to USDNewsAgent and its
+       injected USDNewsPipeline. The orchestrator only routes the
+       news_analysis task to that specialist.
+
+    2. Routing:
+       USDAgentRouter dynamically selects the specialist associated with
+       each research task type.
+
+    3. Evaluator-Optimizer:
+       If evaluation fails, USDAnalysisOptimizer creates corrective
+       actions. The orchestrator performs the requested research,
+       regenerates the analysis, and evaluates it again until quality
+       passes or max_retries is reached.
+
+    High-Level Workflow
+    -------------------
+    PLAN
+      -> COLLECT
+      -> ROUTE / ANALYZE
+      -> AGGREGATE
+      -> GENERATE
+      -> EVALUATE
+      -> OPTIMIZE / RETRY if necessary
+      -> BUILD FINAL REPORT
+      -> SAVE MEMORY
+      -> COMPLETE
+
+    1. Planning
+
     """
 
     def __init__(
         self,
         planner: USDResearchPlanner,
         tool_registry: USDToolRegistry,
-        # provider: USDMarketDataProvider,
         router: USDAgentRouter,
         aggregator: USDResultAggregator,
         analysis_generator: USDAnalysisGenerator,
@@ -57,7 +115,6 @@ class USDResearchOrchestrator:
     ):
         self.planner = planner
         self.tool_registry = tool_registry
-        # self.provider = provider
         self.router = router
         self.aggregator = aggregator
         self.analysis_generator = analysis_generator
@@ -95,6 +152,7 @@ class USDResearchOrchestrator:
         )
 
         # Memory Influencing Behavior
+        # The planner determines what research should happen
         tasks = self.planner.plan(
             stock_symbol = stock_symbol,
             previous_memory = the_previous_memory
@@ -150,6 +208,9 @@ class USDResearchOrchestrator:
             state_history
         )
 
+        # Every specialist returns a USDAnalysis result object that is
+        # heterogeneous to domain findings to be combined by one commeon
+        # result contract
         the_combined_report = self.aggregator.aggregate_results(
             list(results_by_agent.values())
         )
@@ -206,10 +267,10 @@ class USDResearchOrchestrator:
         # --------------------------------------------------
         # Evaluator -> Optimizer Retry Loop
         # --------------------------------------------------
-
+        # This is the loop bounded by max_retries to prevent indefinite execution
         while not evaluation.passed:
 
-            # Check retry budget
+            # Check retry budget and enforce the autonomous retry budget
             if retry_count >= self.max_retries:
                 break
 
@@ -224,6 +285,7 @@ class USDResearchOrchestrator:
                 state_history
             )
 
+            # Convert the evaluator feedback into an executable corrective action
             the_optimization_actions = self.optimizer.optimize(
                 evaluation
             )
@@ -268,7 +330,7 @@ class USDResearchOrchestrator:
                             state,
                             state_history
                         )
-
+                    # Let's route the task to the specialist registered for the appropriate task type.
                     agent = self.router.route(
                         retry_task.task_type
                     )
@@ -332,6 +394,8 @@ class USDResearchOrchestrator:
             # This is necessary becaue if the optimizer obtains newer research
             # the synthesis needs to be regenerated; otherwise, a stale synthesis
             # will be created.
+            # Regenerate the synthesis so the evaluator does not assess a stale analysis
+            # created from a previous evidence
             the_generated_analysis = self.analysis_generator.generate(
                 the_combined_report
             )
@@ -343,7 +407,7 @@ class USDResearchOrchestrator:
                 state,
                 state_history
             )
-
+            # Do no automatically accept the generated analysis.
             evaluation = self.evaluator.evaluate(
                 the_generated_analysis
             )
@@ -438,6 +502,12 @@ class USDResearchOrchestrator:
       self,
       task: USDResearchTask
     ):
+        """
+        Dynamically resolve and execute the data tool required by a task.
+        The task type is solely a lookup key
+        """
+
+        # Agent function dynamic tool use
         tool = self.tool_registry.get(
             task.task_type
         )

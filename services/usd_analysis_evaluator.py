@@ -4,6 +4,7 @@ class USDAnalysisEvaluator:
   '''
     The evaluator checks whether there are enough specialists or not.
     Whether there are any results, summary or evidence present.
+    Decides whether the generated investment analysis is good enough or not.
   '''
   def __init__(self, minimum_specialists: int = 1):
     self.minimum_specialists = minimum_specialists

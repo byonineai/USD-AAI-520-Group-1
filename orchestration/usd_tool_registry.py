@@ -1,6 +1,11 @@
 from tools.usd_research_tool import USDResearchTool
 
 class USDToolRegistry:
+  '''
+  The tool registry is responsible to store the available research tools and
+  return the correct one for a specific task type.
+
+  '''
   def __init__(self):
     self._tools: dict[str, USDResearchTool] = {}
 

@@ -4,6 +4,11 @@ from agents.usd_analysis_strategy import USDAnalysisStrategy
 # A controlled lookup table
 
 class USDAgentRegistry:
+  '''
+  The role of this class is to store specialist agents by task type.
+  The intended flow is:
+  Research Task->USDAgentRouter->USDAgentRegistry->Correct Specialist Agent
+  '''
   def __init__(self):
     self._agents: dict[str, USDAnalysisStrategy] = {}
 

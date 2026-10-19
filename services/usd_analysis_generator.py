@@ -68,6 +68,18 @@ class USDAnalysisGenerator:
         # have been processed.
         all_specialist_findings = "\n".join(all_specialist_sections)
 
+    # --------------------------------------------------
+    # AI USE DISCLOSURE
+    # --------------------------------------------------
+    # The initial wording of this prompt was drafted with
+    # assistance from ChatGPT (OpenAI, 2026).
+    #
+    # The project authors reviewed, modified, tested, and
+    # integrated the final prompt into the application.
+    # The constraints below are intended to keep the generated
+    # investment analysis grounded in supplied specialist evidence
+    # and reduce unsupported financial interpretations.
+    # --------------------------------------------------
         return f"""
     You are a professional investment research assistant.
 

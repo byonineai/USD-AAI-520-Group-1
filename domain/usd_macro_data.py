@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 # @author: Marcelo Salvador
-
+# Data contracts between specialist agents and adapters.
 
 @dataclass
 class USDMacroObservation:

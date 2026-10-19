@@ -6,7 +6,10 @@ from memory.usd_memory_repository import USDMemoryRespository
 from domain.usd_research_memory import USDResearchMemory
 
 class USDJsonMemoryRepository(USDMemoryRespository):
-
+  '''
+    This class is responsible in the definition in what any memory repository should be
+    able to do. It answers which operations must a memory store support.
+  '''
   def __init__(
     self,
     file_path: str = "memory/usd_research_memory.json"
@@ -56,8 +59,11 @@ class USDJsonMemoryRepository(USDMemoryRespository):
         **memory_data
       )
 
-  def _load_all_values(self) -> dict:
 
+  def _load_all_values(self) -> dict:
+      '''
+        This attribute is intended for internal use.
+      '''
       if not self.file_path.exists():
         return {}
 

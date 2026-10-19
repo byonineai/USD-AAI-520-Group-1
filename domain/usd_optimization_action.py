@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+# Data contracts between specialist agents and adapters.
 @dataclass
 class USDOptimizationAction:
   '''

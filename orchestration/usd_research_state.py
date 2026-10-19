@@ -1,5 +1,5 @@
 from enum import Enum
-
+# This is a vocabulary for the agent's state machine which helps prevent mistakes
 class USDResearchState(Enum):
     PLANNING = "planning"
     COLLECTING = "collecting"

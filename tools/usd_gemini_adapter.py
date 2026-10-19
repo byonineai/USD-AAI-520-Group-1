@@ -8,6 +8,12 @@ from tools.usd_llm_provider_interface import USDLLMProviderInterface
 load_dotenv()
 
 class USDGeminiAdapter(USDLLMProviderInterface):
+  '''
+   LLM provider that adapts to the Google Gemini SDK.
+   Responsible to load the Gemini API key and model configuration
+   Initiate the Gemini client
+   Send prompts
+  '''
 
   def __init__(
     self,

@@ -1,4 +1,5 @@
 from dataclasses import (dataclass,field)
+# Data contracts between specialist agents and adapters.
 
 @dataclass
 class USDEvaluationResult:

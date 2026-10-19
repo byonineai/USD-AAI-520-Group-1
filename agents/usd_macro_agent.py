@@ -1,5 +1,4 @@
 from agents.usd_analysis_strategy import USDAnalysisStrategy
-
 from domain.usd_macro_data import USDMacroData
 from domain.usd_analysis_result import USDAnalysisResult
 

@@ -1,5 +1,12 @@
 import sys
 import threading
+# --------------------------------------------------
+# AI USE DISCLOSURE
+# --------------------------------------------------
+# The initial wording of this prompt was drafted with
+# assistance from ChatGPT (OpenAI, 2026).
+#
+# The project authors reviewed,and modified the code below.
 
 def usd_animate_progress_status(
     message: str,

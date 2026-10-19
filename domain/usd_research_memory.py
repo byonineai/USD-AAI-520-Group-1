@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 # Domain model for memory
 # It answers how a stored research memory looks like
-
+# Data contracts between specialist agents and adapters.
 @dataclass
 class USDResearchMemory:
   stock_symbol: str
